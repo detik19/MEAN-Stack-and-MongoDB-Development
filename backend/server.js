@@ -16,6 +16,10 @@ app.use(function(req, res, next) {
 	res.header("Access-Control-Allow-Headers","Content-Type, Authorization");
 	next();
 });
+
+
+app.get('/api/message', GetMessages)  
+
 app.post('/api/message', function(req, res) {
 	console.log(req.body);
 	var message = new Message(req.body);
@@ -23,9 +27,10 @@ app.post('/api/message', function(req, res) {
 	res.status(200);
 });
 
-function GetMessages() {
+function GetMessages(req, res) {
 	Message.find({}).exec(function(err, result) {
-		console.log(result);
+		//console.log(result);
+		res.send(result);
 	})
 }
 
