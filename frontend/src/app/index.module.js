@@ -6,6 +6,7 @@ import { routerConfig } from './index.route';
 import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
 import { AuthController } from './auth/auth.controller';
+import { CompareToDirective } from './directives/compareTo.directive';
 import { GithubContributorService } from '../app/components/githubContributor/githubContributor.service';
 import { WebDevTecService } from '../app/components/webDevTec/webDevTec.service';
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
@@ -20,6 +21,8 @@ angular.module('myMessageFront',  ['ui.router', 'ui.bootstrap', 'toastr'])
   .service('githubContributor', GithubContributorService)
   .service('webDevTec', WebDevTecService)
   .controller('MainController', MainController)
-   .controller('AuthController', AuthController)
+  .controller('AuthController', AuthController)
   .directive('acmeNavbar', NavbarDirective)
-  .directive('acmeMalarkey', MalarkeyDirective);
+  .directive('acmeMalarkey', MalarkeyDirective)
+  .directive('compareTo', CompareToDirective);
+

@@ -24,7 +24,7 @@
 			<div class="panel-heading">Register</div>
 			<div class="panel-body">
 
-				<form>
+				<form name="register">
 					<div class="form-group">
 						<label>Email Addres</label> <input type="email"
 							class="form-control">
@@ -32,12 +32,13 @@
 					</div>
 					<div class="form-group">
 						<label>Password</label> <input type="password"
-							class="form-control">
+							class="form-control" name="pwd" ng-model="pwd">
 					</div>
 					<div class="form-group">
 						<label>Password Confirm</label> <input type="password"
-							class="form-control">
+							class="form-control" compare-to="pwd" name="pwdConfirm" ng-model="pwdConfirm">
 					</div>
+					<span ng-show="register.pwdConfirm.$dirty && register.pwdConfirm.$invalid">Passwords do not match</span>
 					<button type="button" class="btn btn-default">Submit</button>
 				</form>
 
