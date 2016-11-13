@@ -12,7 +12,8 @@ import { WebDevTecService } from '../app/components/webDevTec/webDevTec.service'
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive';
 
-angular.module('myMessageFront',  ['ui.router', 'ui.bootstrap', 'toastr'])
+angular.module('myMessageFront',  ['ui.router', 'ui.bootstrap', 'toastr', 'satellizer'])
+  .constant('API_URL', 'http://localhost:8080/')
   .constant('malarkey', malarkey)
   .constant('moment', moment)
   .config(config)
